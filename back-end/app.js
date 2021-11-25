@@ -6,7 +6,7 @@ const cors = require('cors');
 const sequelize = require('./conexion');
 
 // //routers
-// const userRouter = require('./routers/user.routes');
+const userRouter = require('./routers/user.routes');
 // const productRouter = require('./routers/product.routes');
 // const orderRouter = require('./routers/order.routes');
 
@@ -17,7 +17,7 @@ app.use(cors());
 app.use(express.json());
 
 // // Routes
-// app.use('/user', userRouter);
+app.use('/user', userRouter);
 // app.use('/product', productRouter);
 // app.use('/order', orderRouter);
 
