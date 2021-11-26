@@ -1,18 +1,18 @@
 const { validationResult, check } = require('express-validator');
 
-const registerUser = [
+const createUser = [
     check('name_user')
         .isLength({ min: 2 })
-        .withMessage('The name should be have more of 10 characters'),
+        .withMessage('The FirstName should be have more of 2 characters'),
     check('lastName')
         .isLength({ min: 2 })
-        .withMessage('The lastName should be have more of 2 characters'),
+        .withMessage('The LastName should be have more of 2 characters'),
     check('mail')
         .isEmail()
-        .withMessage('The mail is not valid'),
+        .withMessage('The Mail is not valid'),
     check('pass')
         .isLength({ min: 5, max: 8 })
-        .withMessage('The password should be have more of 5 characters'),
+        .withMessage('The Password should be have more of 5 characters'),
     (req, res, next) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
@@ -25,38 +25,44 @@ const registerUser = [
     }
 ];
 
-const loginInputs = [
-    check('correo')
+const login = [
+    check('mail')
         .isEmail()
-        .withMessage('Error en el campo correo'),
-    check('contrasenia')
-        .isLength({ min: 10, max: 10 })
-        .withMessage('Error en el campo contrasenia'),
+        .withMessage('Error in the Mail field'),
+    check('pass')
+        .isLength({ min: 5, max: 8 })
+        .withMessage('Error in the Password field'),
     (req, res, next) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
             return res.status(422).json({
                 errors: errors.array(),
-                msg: 'error en el validador del login'
+                msg: 'Error in the login validator'
             });
         }
         next();
     }
 ];
 
-const updateUserName = [
-    check('ID_usuario')
+const updateUserInfo = [
+    check('name_user')
+        .isLength({ min: 2 })
+        .withMessage('The FirstName should be have more of 2 characters'),
+        check('lastName')
+        .isLength({ min: 2 })
+        .withMessage('The LastName should be have more of 2 characters'),
+    check('mail')
+        .isEmail()
+        .withMessage('The Mail is not valid'),
+    check('ID_user_type')
         .isLength({ min: 1 })
-        .withMessage('Error en el campo ID_usuario'),
-    check('nombre')
-        .isLength({ max: 255 })
-        .withMessage('Error en el campo nombre'),
+        .withMessage('The User type is not valid'),
     (req, res, next) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
             return res.status(422).json({
                 errors: errors.array(),
-                msg: 'error en el validador de la modificacion del usuario'
+                msg: 'Error into the validator modifying a user'
             });
         }
         next();
@@ -64,50 +70,15 @@ const updateUserName = [
 ];
 
 const deleteUser = [
-    check('ID_usuario')
+    check('ID_user')
         .isLength({ min: 1 })
-        .withMessage('Error en el campo ID_usuario'),
+        .withMessage('The User ID is not valid'),
     (req, res, next) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
             return res.status(422).json({
                 errors: errors.array(),
-                msg: 'error en el validador de la eliminacion del usuario'
-            });
-        }
-        next();
-    }
-];
-
-const updateUserTypeName = [
-    check('ID_tipo_de_usuario')
-        .isLength({ min: 1 })
-        .withMessage('Error en el campo ID_tipo_de_usuario'),
-    check('nombre')
-        .isLength({ max: 255 })
-        .withMessage('Error en el campo nombre'),
-    (req, res, next) => {
-        const errors = validationResult(req);
-        if (!errors.isEmpty()) {
-            return res.status(422).json({
-                errors: errors.array(),
-                msg: 'error en el validador de la modificacion del tipo de usuario'
-            });
-        }
-        next();
-    }
-];
-
-const deleteUserType = [
-    check('ID_tipo_de_usuario')
-        .isLength({ min: 1 })
-        .withMessage('Error en el campo ID_tipo_de_usuario'),
-    (req, res, next) => {
-        const errors = validationResult(req);
-        if (!errors.isEmpty()) {
-            return res.status(422).json({
-                errors: errors.array(),
-                msg: 'error en el validador de la eliminacion del tipo de usuario'
+                msg: 'Error into the validator deleting a user'
             });
         }
         next();
@@ -115,5 +86,5 @@ const deleteUserType = [
 ];
 
 module.exports = {
-    registerUser, loginInputs
+    createUser, login, updateUserInfo, deleteUser
 };

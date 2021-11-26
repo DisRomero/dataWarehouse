@@ -10,9 +10,12 @@ const validateToken = (req, res, next) => {
     }
     const jwtClient = jwtToken.split(" ")[1];
     // autorizacion token
-    jwt.verify(jwtClient, SECRET, (error) => {
-        if (error) {
-            return res.status(401).json({ msg: "Invalid token" })
+    jwt.verify(jwtClient, SECRET, (error, decoded) => {
+        if(error) {
+            return res.status(401).json({msg: "Invalid token"})
+        }
+        if(decoded.ID_user_type!==1){
+            return res.status(401).json({msg: "The user is not an admin"})
         }
         next();
     })

@@ -25,11 +25,20 @@ create table if not exists user (
 );
 
 insert into user(name_user, lastName, mail, pass, ID_user_type)
-values('Diana', 'Romero', 'diana@romero.com', 12345678, 1),
-	('user', 'Romero', 'user@romero.com', 'user', 2);
+values('user', 'admin', 'user@admin.com', '12345678', 1),
+	('user', 'basic', 'user@basic.com', '90123456', 2);
 
 select *
 from user u;
+
+SELECT * FROM user WHERE mail="user@admin.com" AND pass="12345678"
+
+ UPDATE user
+            set name_user = 'change', lastName = 'fine'
+            where ID_user = 3;
+           
+           DELETE FROM user
+            where ID_user =8;
 
 create table if not exists region (
 	ID_region int not null primary key auto_increment,
@@ -157,5 +166,3 @@ values('@cuentaFace', 'No molestar', 1, 1),
 
 select *
 from contact_with_channel;
-
-select * from pedido p WHERE ID_pedido=89 ;

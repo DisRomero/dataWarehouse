@@ -4,19 +4,19 @@ const userController = require('../controllers/user.controller');
 const validator = require('../validator/userValidator');
 const middleware = require('../middleware/middleware');
 
-//register-createUser
-router.post('/register', validator.registerUser, userController.register);
+//register-createUser basic by default, to create an admin should be add by DB
+router.post('/createUser', middleware.validateToken, validator.createUser, userController.createUser);
 
-// //login
-// router.post('/login', validator.loginInputs, userController.login);
+//login
+router.post('/login', validator.login, userController.login);
 
-// //read - getAllUser
-// router.get('/all', middleware.validarTokenAdmin, userController.allUser);
+//read - getAllUser
+router.get('/all', userController.allUser);
 
-// //update  - editUser
-// router.put('/editName', middleware.validarTokenAdmin, validator.updateUserName, userController.editUser);
+//update  - editUser
+router.put('/edit', middleware.validateToken, validator.updateUserInfo, userController.editUser);
 
-// //delete - deleteUser
-// router.delete('/delete', middleware.validarTokenAdmin, validator.deleteUser, userController.deleteUser);
+//delete - deleteUser
+router.delete('/delete', middleware.validateToken, validator.deleteUser, userController.deleteUser);
 
 module.exports = router;
