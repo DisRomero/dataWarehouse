@@ -10,13 +10,13 @@ router.post('/createUser', middleware.validateToken, validator.createUser, userC
 //login
 router.post('/login', validator.login, userController.login);
 
-//read - getAllUser
+//read - getAll
 router.get('/all', userController.allUser);
 
-//update  - editUser
+//update  - edit
 router.put('/edit', middleware.validateToken, validator.updateUserInfo, userController.editUser);
 
-//delete - deleteUser
+//delete - delete
 router.delete('/delete', middleware.validateToken, validator.deleteUser, userController.deleteUser);
 
 module.exports = router;

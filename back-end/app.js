@@ -5,10 +5,14 @@ const port = 3000;
 const cors = require('cors');
 const sequelize = require('./conexion');
 
-// //routers
+//routers
 const userRouter = require('./routers/user.routes');
-// const productRouter = require('./routers/product.routes');
-// const orderRouter = require('./routers/order.routes');
+const regionRouter = require('./routers/region.routes');
+const countryRouter = require('./routers/country.routes');
+const cityRouter = require('./routers/city.routes');
+const companyRouter = require('./routers/company.routes');
+const contactRouter = require('./routers/contact.routes');
+const contactWithChannelRouter = require('./routers/contactWithChannel.routes');
 
 //middleware
 const app = express();
@@ -16,10 +20,14 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
-// // Routes
+// Routes
 app.use('/user', userRouter);
-// app.use('/product', productRouter);
-// app.use('/order', orderRouter);
+app.use('/region', regionRouter);
+app.use('/country', countryRouter);
+app.use('/city', cityRouter);
+app.use('/company', companyRouter);
+app.use('/contact', contactRouter);
+app.use('/contactWithChannel', contactWithChannelRouter);
 
 //server
 app.listen(port, () => {

@@ -42,7 +42,7 @@ SELECT * FROM user WHERE mail="user@admin.com" AND pass="12345678"
 
 create table if not exists region (
 	ID_region int not null primary key auto_increment,
-	name_region varchar(255) not null
+	name_region varchar(255) not null UNIQUE
 );
 
 insert into region(name_region)
@@ -57,7 +57,7 @@ from region r;
 
 create table if not exists country (
 	ID_country int not null primary key auto_increment,
-	name_country varchar(255) not null,
+	name_country varchar(255) not null UNIQUE,
 	ID_region int,
 	foreign key (ID_region) references region(ID_region)	
 );
@@ -74,7 +74,7 @@ from country c;
 
 create table if not exists city (
 	ID_city int not null primary key auto_increment,
-	name_city varchar(255) not null,
+	name_city varchar(255) not null UNIQUE,
 	ID_country int,
 	foreign key (ID_country) references country(ID_country)
 );
