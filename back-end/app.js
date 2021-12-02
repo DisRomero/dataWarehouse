@@ -13,6 +13,7 @@ const cityRouter = require('./routers/city.routes');
 const companyRouter = require('./routers/company.routes');
 const contactRouter = require('./routers/contact.routes');
 const contactWithChannelRouter = require('./routers/contactWithChannel.routes');
+const searchContact = require('./routers/searchContact.routes');
 
 //middleware
 const app = express();
@@ -28,6 +29,7 @@ app.use('/city', cityRouter);
 app.use('/company', companyRouter);
 app.use('/contact', contactRouter);
 app.use('/contactWithChannel', contactWithChannelRouter);
+app.use('/searchContact', searchContact);
 
 //server
 app.listen(port, () => {
