@@ -1,18 +1,22 @@
 const express = require('express');
 const router = express.Router();
 const middleware = require('../middleware/middleware');
-
-//
-// router.post('/', middleware.validateToken, validator.createContactWithChannel, contactWithChannelController.createContactWithChannel);
-
-/**
- * /** search a contact by name or position
- * SELECT contact.name_contact, contact.position, city.ID_city, city.name_city FROM contact
-inner join city on contact.ID_city = city.ID_city
-where contact.name_contact like "%m%" or contact.position like "%m%"
+const contactController = require('../controllers/searchContact.controller');
 
 
-search contact by interests 
-search contact by favorite channel
- */
+// search a contact by name or position
+router.get('/ByName', middleware.validateToken, contactController.contactByName);
+
+// search a contact by position
+router.get('/ByPosition', middleware.validateToken, contactController.contactByPosition);
+
+//search contact by region
+router.get('/ByRegionCountry', middleware.validateToken, contactController.contactByRegionCountry);
+
+//search contact by interests
+router.get('/ByInterests', middleware.validateToken, contactController.contactByInterest);
+
+//search contact by favorite channel
+router.get('/ByChannel', middleware.validateToken, contactController.contactByChannel);
+
 module.exports = router;
