@@ -11,7 +11,7 @@ router.post('/createUser', middleware.validateToken, validator.createUser, userC
 router.post('/login', validator.login, userController.login);
 
 //read - getAll
-router.get('/all', userController.allUser);
+router.get('/all', middleware.validateToken, userController.allUser);
 
 //update  - edit
 router.put('/edit', middleware.validateToken, validator.updateUserInfo, userController.editUser);

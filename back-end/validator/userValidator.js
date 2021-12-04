@@ -10,6 +10,9 @@ const createUser = [
     check('mail')
         .isEmail()
         .withMessage('The Mail is not valid'),
+    check('ID_user_type')
+        .isLength({ min: 2 })
+        .withMessage('The User type is not valid'),
     check('pass')
         .isLength({ min: 5, max: 8 })
         .withMessage('The Password should be have more of 5 characters'),
@@ -57,6 +60,9 @@ const updateUserInfo = [
     check('ID_user_type')
         .isLength({ min: 1 })
         .withMessage('The User type is not valid'),
+    check('pass')
+        .isLength({ min: 5, max: 8 })
+        .withMessage('The Password should be have more of 5 characters'),
     (req, res, next) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {

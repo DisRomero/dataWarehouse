@@ -6,12 +6,12 @@ const EXPIRES = process.env.EXPIRES
 
 //register-createUser
 const createUser = async (req, res) => {
-    const { name_user, lastName, mail, pass } = req.body;
+    const { name_user, lastName, mail, ID_user_type, pass } = req.body;
 
     try {
         const result = await sequelize.query(
-            `INSERT INTO user(name_user, lastName, mail, pass, ID_user_type) 
-            VALUES('${name_user}', '${lastName}', '${mail}', '${pass}', 2)`,
+            `INSERT INTO user(name_user, lastName, mail, ID_user_type, pass) 
+            VALUES('${name_user}', '${lastName}', '${mail}', ${ID_user_type}, '${pass}')`,
             { type: sequelize.QueryTypes.INSERT });
         res.status(201).json({ msg: 'The user was created successfully' });
     } catch (error) {
@@ -56,11 +56,11 @@ const allUser = async (req, res) => {
 
 // //update - updateUserNameByID
 const editUser = async (req, res) => {
-    const { ID_user, name_user, lastName, mail, ID_user_type } = req.body;
+    const { ID_user, name_user, lastName, mail, ID_user_type, pass } = req.body;
     try {
         const result = await sequelize.query(
             `UPDATE user
-            set name_user = '${name_user}', lastName = '${lastName}', mail = '${mail}', ID_user_type = '${ID_user_type}'
+            set name_user = '${name_user}', lastName = '${lastName}', mail = '${mail}', ID_user_type = '${ID_user_type}', pass='${pass}'
             where ID_user = ${ID_user};`,
             { type: sequelize.QueryTypes.UPDATE });
         res.status(200).json({ body: result, msg: 'Successfully modified user' });
