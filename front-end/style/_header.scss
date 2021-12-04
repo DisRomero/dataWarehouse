@@ -1,0 +1,17 @@
+$background-color: #1d72c2;
+$font-color: #ffffff;
+
+.nav-bar {
+  height: 64px;
+  width: 100%;
+  background-color: $background-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.text {
+  color: $font-color;
+}
