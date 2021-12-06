@@ -208,6 +208,17 @@
   border-radius: 0%;
 }
 
+.title-company {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
 .table {
   margin-left: 28px;
   margin-top: 73px;

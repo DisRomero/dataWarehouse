@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style/style.css" />
-    <title>Contactos</title>
+    <title>Compañias</title>
 
     <!--fuente Open Sans-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,10 +22,10 @@
 
             <ul class="nav">
                 <li class="nav-item">
-                  <a class="text nav-link" href="#">Contactos</a>
+                  <a class="text nav-link" href="contacts.html">Contactos</a>
                 </li>
                 <li class="nav-item">
-                  <a class="text nav-link" href="company.html">Compañias</a>
+                  <a class="text nav-link" href="#">Compañias</a>
                 </li>
                 <li class="nav-item">
                   <a class="text nav-link" href="#">Usuarios</a>
@@ -37,53 +37,9 @@
         </nav>
     </header>
 
-    <section class="title">
-      <h3>Contactos</h3>
-    </section>
-
-    <section class="buttons">
-      <div class="input-group">
-        <input type="text" class="form-control" aria-label="Text input with dropdown button">
-        <div class="input-group-append search-contact">
-          <button id="open-dropdown" class="btn btn-dark dropdown-toggle dropdown-toggle-split" type="button" data-toggle="dropdown" aria-expanded="false"></button>
-          
-          <div class="dropdown-menu" id="dropdown" aria-labelledby="open-dropdown">
-            <label for="contactName" class="label-name">Nombre del contacto</label>
-
-            <input id="contactName" type="text" class="font-weight-light name text-input" placeholder="Introduce el nombre del contacto">
-            <label for="position" class="col-form-label label-position">Cargo</label>
-
-            <input id="position" type="text" class="font-weight-light position text-input" placeholder="Introduce el cargo del contacto">
-            <label for="rowByRegion" class="col-form-label label-region">País/Región</label>
-            <select name="rowByRegion" id="rowByRegion" class="region input-list">
-              <option value="all">Todos</option>
-              <option value="argentina">Argentina</option>
-            </select>
-            <label for="rowByCompany" class="col-form-label label-company">Compañía</label>
-            <select name="rowByCompany" id="rowByCompany" class="company input-list">
-              <option value="all">Todos</option>
-              <option value="ecom">Ecom</option>
-            </select>
-            <label for="rowByChannel" class="col-form-label label-favorite">Canal favorito</label>
-            <select name="rowByChannel" id="rowByChannel" class="favorite input-list">
-              <option value="all">Todos</option>
-              <option value="whatsapp">Whatsapp</option>
-            </select>
-            <label for="rowByInterets" class="col-form-label label-interets">Interés</label>
-            <select name="rowByInterets" id="rowByInterets" class="interets input-list">
-              <option value="all">Todos</option>
-              <option value="argentina">25%</option>
-            </select>          
-          </div>
-          <button id="search" type="button" class="btn btn-outline-dark"><i class="bi bi-search" style="color: #1d72c2;"></i></button>
-          
-        </div>
-      
-        <div class="add-import-contact">
-          <button type="button" class="btn btn-outline-primary"><i class="bi bi-arrow-up" style="color: #1d72c2;"></i></button>
-          <button type="button" id="btn" class="btn btn-outline-primary dropdown-toggle">Exportar contactos</button>
-          <button type="button" id="btn" class="btn btn-primary">Agregar contacto</button>
-      </div>
+    <section class="title title-company">
+      <h3>Compañias</h3>
+      <button type="button" id="btn" class="btn btn-primary btn-company">Agregar compañia</button>
     </section>
 
     <section class="contact-list">
