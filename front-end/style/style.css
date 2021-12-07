@@ -15,17 +15,17 @@
   padding-right: 26px;
 }
 
-.text {
-  color: #ffffff;
-}
-
-.text:hover, .text:active {
+.nav-bar .active {
   color: #ffffff;
   font-weight: bold;
   -webkit-text-decoration-line: underline;
           text-decoration-line: underline;
   text-underline-offset: 20px;
   text-decoration-thickness: 5px;
+}
+
+.text {
+  color: #ffffff;
 }
 
 .title {
@@ -105,8 +105,8 @@
 }
 
 .input-group .search-contact .show .label-position {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
   grid-area: label-position;
 }
 
@@ -117,7 +117,7 @@
 }
 
 .input-group .search-contact .show .label-region {
-  -ms-grid-row: 3;
+  -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: label-region;
 }
@@ -219,6 +219,12 @@
   padding-right: 5%;
 }
 
+.title-company .btn-company {
+  background-color: #1d72c2;
+  border-color: #1d72c2;
+  border-radius: 0;
+}
+
 .table {
   margin-left: 28px;
   margin-top: 73px;
@@ -291,6 +297,285 @@
 
 .table .bi-arrow-down-up {
   margin-left: 8px;
+}
+
+.modal-dialog {
+  max-width: 1215px;
+  margin: 0;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 96px;
+}
+
+.modal-dialog .modal-content {
+  height: 577px;
+}
+
+.modal-dialog .modal-content .modal-header {
+  height: 140px;
+  background-color: #1d72c2;
+  padding-top: 27px;
+  padding-left: 32px;
+  color: #ffffff;
+}
+
+.modal-dialog .modal-content .modal-header .close {
+  color: #ffffff;
+  opacity: 1;
+}
+
+.modal-dialog .modal-content .modal-body {
+  padding: 0;
+  margin-top: -4%;
+  background-color: #ffffff;
+  width: 1172px;
+  height: 131px;
+  margin-left: 21px;
+  border-radius: 6.5px;
+}
+
+.addContactInfo {
+  padding-top: 23.5px;
+  padding-left: 23.5px;
+  padding-bottom: 23.5px;
+  padding-right: 15.5px;
+  border: 3px solid #0683f9;
+  border-radius: 6.5px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-columns: 0.5fr 1fr 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  gap: 0px 0px;
+      grid-template-areas: "imgContact label-firstName label-lastName label-position label-email label-companyName" "imgContact input-firstName input-lastName input-position input-email input-companyName";
+}
+
+.addContactInfo img {
+  width: 85px;
+  height: 84px;
+}
+
+.addContactInfo span {
+  color: #de0028;
+}
+
+.addContactInfo label {
+  margin-top: 11px;
+}
+
+.addContactInfo input,
+.addContactInfo select {
+  width: 190px;
+  height: 35.5px;
+}
+
+.imgContact {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: imgContact;
+  border: none;
+  margin-right: 33px;
+}
+
+.label-firstName {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: label-firstName;
+}
+
+.input-firstName {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: input-firstName;
+}
+
+.label-lastName {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: label-lastName;
+}
+
+.input-lastName {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: input-lastName;
+}
+
+.label-position {
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
+  grid-area: label-position;
+}
+
+.input-position {
+  -ms-grid-row: 2;
+  -ms-grid-column: 4;
+  grid-area: input-position;
+}
+
+.label-email {
+  -ms-grid-row: 1;
+  -ms-grid-column: 5;
+  grid-area: label-email;
+}
+
+.input-email {
+  -ms-grid-row: 2;
+  -ms-grid-column: 5;
+  grid-area: input-email;
+}
+
+.label-companyName {
+  -ms-grid-row: 1;
+  -ms-grid-column: 6;
+  grid-area: label-companyName;
+}
+
+.input-companyName {
+  -ms-grid-row: 2;
+  -ms-grid-column: 6;
+  grid-area: input-companyName;
+  font-size: x-small;
+}
+
+.addContactInfo2 {
+  margin-top: 35.3px;
+  margin-left: 33.2px;
+  margin-right: 37px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1.5fr 0.5fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1.5fr 0.5fr;
+  -ms-grid-rows: 1fr 2fr 1fr 1fr;
+      grid-template-rows: 1fr 2fr 1fr 1fr;
+  gap: 0px 0px;
+      grid-template-areas: "label-region label-country label-city label-address label-interest ." "input-region input-country input-city input-address barProgress-interest selection-interest" "label-channelContact label-userAccount label-preference button-addChannel . ." "input-channelContact input-userAccount input-preference button-addChannel . .";
+}
+
+.addContactInfo2 input,
+.addContactInfo2 select {
+  width: 190px;
+  height: 35.5px;
+  margin-right: 16px;
+}
+
+.label-region {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: label-region;
+}
+
+.input-region {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: input-region;
+}
+
+.label-channelContact {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: label-channelContact;
+}
+
+.input-channelContact {
+  -ms-grid-row: 4;
+  -ms-grid-column: 1;
+  grid-area: input-channelContact;
+}
+
+.label-country {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: label-country;
+}
+
+.input-country {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: input-country;
+}
+
+.label-userAccount {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: label-userAccount;
+}
+
+.input-userAccount {
+  -ms-grid-row: 4;
+  -ms-grid-column: 2;
+  grid-area: input-userAccount;
+}
+
+.label-city {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: label-city;
+}
+
+.input-city {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: input-city;
+}
+
+.label-preference {
+  -ms-grid-row: 3;
+  -ms-grid-column: 3;
+  grid-area: label-preference;
+}
+
+.input-preference {
+  -ms-grid-row: 4;
+  -ms-grid-column: 3;
+  grid-area: input-preference;
+}
+
+.label-address {
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
+  grid-area: label-address;
+}
+
+.input-address {
+  -ms-grid-row: 2;
+  -ms-grid-column: 4;
+  grid-area: input-address;
+}
+
+.button-addChannel {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 4;
+  grid-area: button-addChannel;
+}
+
+.label-interest {
+  -ms-grid-row: 1;
+  -ms-grid-column: 5;
+  grid-area: label-interest;
+}
+
+.barProgress-interest {
+  -ms-grid-row: 2;
+  -ms-grid-column: 5;
+  grid-area: barProgress-interest;
+  height: 13px;
+  border-radius: 5px;
+  margin-top: 5%;
+  margin-bottom: auto;
+}
+
+.selection-interest {
+  -ms-grid-row: 2;
+  -ms-grid-column: 6;
+  grid-area: selection-interest;
+  width: 70px !important;
+  margin-left: 14.5px;
+  height: 35px;
+  font-size: 8px;
 }
 
 footer {
