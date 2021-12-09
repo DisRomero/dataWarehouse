@@ -417,13 +417,13 @@
 
 .label-email {
   -ms-grid-row: 1;
-  -ms-grid-column: 5;
+  -ms-grid-column: 3;
   grid-area: label-email;
 }
 
 .input-email {
   -ms-grid-row: 2;
-  -ms-grid-column: 5;
+  -ms-grid-column: 3;
   grid-area: input-email;
 }
 
@@ -437,7 +437,9 @@
   -ms-grid-row: 2;
   -ms-grid-column: 6;
   grid-area: input-companyName;
-  font-size: x-small;
+  font-size: revert;
+  text-overflow: ellipsis;
+  padding: 0;
 }
 
 .addContactInfo2 {
@@ -451,7 +453,7 @@
   -ms-grid-rows: 1fr 2fr 1fr 1fr;
       grid-template-rows: 1fr 2fr 1fr 1fr;
   gap: 0px 0px;
-      grid-template-areas: "label-region label-country label-city label-address label-interest ." "input-region input-country input-city input-address barProgress-interest selection-interest" "label-channelContact label-userAccount label-preference button-addChannel . ." "input-channelContact input-userAccount input-preference button-addChannel . .";
+      grid-template-areas: "label-region label-country label-city label-address label-interest ." "input-region input-country input-city input-address barProgress-interest selection-interest" "label-channelContact label-userAccount label-preference . . ." "input-channelContact input-userAccount input-preference button-addChannel . .";
 }
 
 .addContactInfo2 input,
@@ -511,13 +513,13 @@
 
 .label-city {
   -ms-grid-row: 1;
-  -ms-grid-column: 3;
+  -ms-grid-column: 5;
   grid-area: label-city;
 }
 
 .input-city {
   -ms-grid-row: 2;
-  -ms-grid-column: 3;
+  -ms-grid-column: 5;
   grid-area: input-city;
 }
 
@@ -535,21 +537,24 @@
 
 .label-address {
   -ms-grid-row: 1;
-  -ms-grid-column: 4;
+  -ms-grid-column: 2;
   grid-area: label-address;
 }
 
 .input-address {
   -ms-grid-row: 2;
-  -ms-grid-column: 4;
+  -ms-grid-column: 2;
   grid-area: input-address;
 }
 
 .button-addChannel {
-  -ms-grid-row: 3;
-  -ms-grid-row-span: 2;
+  -ms-grid-row: 4;
   -ms-grid-column: 4;
   grid-area: button-addChannel;
+}
+
+.button-addChannel:disabled {
+  border: 1px solid rgba(0, 0, 0, 0.25);
 }
 
 .label-interest {
@@ -575,7 +580,112 @@
   width: 70px !important;
   margin-left: 14.5px;
   height: 35px;
-  font-size: 8px;
+  padding: 0;
+}
+
+.modal-footer .btn-light {
+  background-color: #ffffff;
+  opacity: 0.8;
+  color: rgba(0, 0, 0, 0.25);
+}
+
+.modal-footer .btn-secondary {
+  border-radius: 0;
+}
+
+.modal-dialog .modal-company {
+  height: auto;
+}
+
+.addCompanyInfo {
+  padding-top: 23.5px;
+  padding-left: 23.5px;
+  padding-bottom: 23.5px;
+  padding-right: 15.5px;
+  border: 3px solid #0683f9;
+  border-radius: 6.5px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1.4fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1.4fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  gap: 0px 4%;
+      grid-template-areas: "label-name label-address label-email label-phoneNumber label-city" "input-name input-address input-email input-phoneNumber input-city";
+}
+
+.addCompanyInfo span {
+  color: #de0028;
+}
+
+.addCompanyInfo label {
+  margin-top: 11px;
+}
+
+.addCompanyInfo input,
+.addCompanyInfo select {
+  width: 190px;
+  height: 35.5px;
+}
+
+.label-name {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: label-name;
+}
+
+.input-name {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: input-name;
+}
+
+.label-address {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: label-address;
+}
+
+.input-address {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: input-address;
+}
+
+.label-email {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: label-email;
+}
+
+.input-email {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: input-email;
+}
+
+.label-phoneNumber {
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
+  grid-area: label-phoneNumber;
+}
+
+.input-phoneNumber {
+  -ms-grid-row: 2;
+  -ms-grid-column: 4;
+  grid-area: input-phoneNumber;
+}
+
+.label-city {
+  -ms-grid-row: 1;
+  -ms-grid-column: 5;
+  grid-area: label-city;
+}
+
+.input-city {
+  -ms-grid-row: 2;
+  -ms-grid-column: 5;
+  grid-area: input-city;
 }
 
 footer {

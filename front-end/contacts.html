@@ -110,7 +110,7 @@
                       <label for="addContactLastEmail" class="label-email">Email<span>*</span></label>
                       <input type="email" class="form-control input-email" id="addContactLastEmail" required>
                       <label for="addContactCompany" class="label-companyName">Compañia<span>*</span></label>
-                      <select name="addContactCompany" id="addContactCompany" class="input-companyName" required>
+                      <select name="addContactCompany" id="addContactCompany" class=" form-control input-companyName" required>
                         <option value="" disabled selected>Ingresar nombre de la compañia</option>
                         <option value="Ecom">Ecom</option>
                         <option value="Firefox">Firefox</option>
@@ -120,23 +120,26 @@
                     <div class="form-group addContactInfo2">
                       <label for="addContactRegion" class="label-region">Región</label>
                       <select name="addContactRegion" id="addContactRegion" class="form-control input-region">
+                        <option value="" disabled selected>Seleccionar región</option>
                         <option value="Asia">Asia</option>
                         <option value="America">America</option>
                       </select>
                       <label for="addContactCountry" class="label-country">País</label>
-                      <select name="addContactCountry" id="addContactCountry" class="form-control input-country">
+                      <select name="addContactCountry" id="addContactCountry" class="form-control input-country" disabled>
+                        <option value="" disabled selected>Seleccionar país</option>
                         <option value="Japon">Japon</option>
                         <option value="Colombia">Colombia</option>
                       </select>
                       <label for="addContactCity" class="label-city">Ciudad</label>
-                      <select name="addContactCity" id="addContactCity" class="form-control input-city">
+                      <select name="addContactCity" id="addContactCity" class="form-control input-city" disabled>
+                        <option value="" disabled selected>Seleccionar ciudad</option>
                         <option value="Cartagena">Cartagena</option>
                         <option value="Medellin">Medellín</option>
                       </select>
                       <label for="addContactAddress" class="label-address">Direccíon</label>
-                      <input type="text" class="form-control input-address" id="addContactAddress">
+                      <input type="text" class="form-control input-address" id="addContactAddress" disabled>
                       <label for="addContactInterest" class="label-interest">Interés</label>
-                      <div class="progress-bar bg-danger barProgress-interest" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                      <div class="progress-bar bg-danger barProgress-interest" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                       <select name="addContactInterest" id="addContactInterest" class="form-control selection-interest">
                         <option value="0" selected>0%</option>
                         <option value="25">25%</option>
@@ -146,24 +149,26 @@
                       </select>
                       <label for="addContactChannelContact" class="label-channelContact">Canal de contacto</label>
                       <select name="addContactChannelContact" id="addContactChannelContact" class="form-control input-channelContact">
+                        <option value="" disabled selected>Seleccionar canal</option>
                         <option value="Whatsapp">Whatsapp</option>
                         <option value="Instagram">Instagram</option>
                       </select>
                       <label for="addContactUserAccount" class="label-userAccount">Cuenta de usuario</label>
-                      <input type="text" class="form-control input-userAccount" id="addContactUserAccount">
+                      <input type="text" class="form-control input-userAccount" id="addContactUserAccount" placeholder="@ejemplo" disabled>
                       <label for="addContactPreference" class="label-preference">Preferencias</label>
-                      <select name="addContactPreference" id="addContactPreference" class="form-control input-preference">
+                      <select name="addContactPreference" id="addContactPreference" class="form-control input-preference" disabled>
+                        <option value="" disabled selected>Sin preferencia</option>
                         <option value="NoMolestar">No molestar</option>
                         <option value="Disponible">Disponible</option>
                       </select>
-                      <button type="button" class="btn btn-primary button-addChannel form-control"><i class="bi bi-plus"></i>Agregar canal</button>
+                      <button type="button" class="btn btn-light button-addChannel form-control" disabled><i class="bi bi-plus" ></i>Agregar canal</button>
 
                     </div>
                   </form>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                  <button type="button" class="btn btn-primary">Guardar contacto</button><!--successfully or error adding a contact-->
+                  <button type="button" class="btn btn-light btn-cancel-modal" data-dismiss="modal">Cancelar</button>
+                  <button type="button" class="btn btn-secondary" disabled>Guardar contacto</button><!--successfully or error adding a contact-->
                 </div>
               </div>
             </div>
