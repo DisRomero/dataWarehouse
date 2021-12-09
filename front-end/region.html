@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style/style.css" />
-    <title>Compañias</title>
+    <title>Región/Ciudad</title>
 
     <!--fuente Open Sans-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -25,56 +25,48 @@
                   <a class="text nav-link" href="contacts.html">Contactos</a>
                 </li>
                 <li class="nav-item">
-                  <a class="text nav-link active" href="company.html">Compañias</a>
+                  <a class="text nav-link " href="company.html">Compañias</a>
                 </li>
                 <li class="nav-item">
                   <a class="text nav-link" href="users.html">Usuarios</a>
                 </li>
                 <li class="nav-item">
-                  <a class="text nav-link"  href="region.html">Región/Ciudad</a>
+                  <a class="text nav-link active"  href="region.html">Región/Ciudad</a>
                 </li>
             </ul>
         </nav>
     </header>
 
     <section class="title title-company">
-      <h3>Compañias</h3>
+      <h3>Regiónes/Ciudades</h3>
       <!-- Button add contact modal -->
-      <button type="button" id="btn" class="btn btn-primary btn-company" data-toggle="modal" data-target="#addCompany">Agregar compañia</button>
+      
+      <button type="button" class="btn btn-primary btn-company" data-toggle="modal" data-target="#addRegion" data-whatever="region">Agregar region</button>
+      <button type="button" class="btn btn-primary btn-company" data-toggle="modal" data-target="#addRegion" data-whatever="@fat">Open modal for @fat</button>
+      <button type="button" class="btn btn-primary btn-company" data-toggle="modal" data-target="#addRegion" data-whatever="@getbootstrap">Open modal for @getbootstrap</button>
 
+      
         <!-- add contact Modal -->
-        <div class="modal fade" id="addCompany" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="addContactLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content modal-company">
+        <div class="modal fade" id="addRegion" data-backdrop="static" tabindex="-1" aria-labelledby="addRegionLabel" aria-hidden="true" role="dialog">
+          <div class="modal-dialog modal-dialog-centered  modal-sm" role="document">
+            <div class="modal-content modal-region">
               <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Nueva compañia</h5>
+                <h5 class="modal-title" id="addRegionLabel">Nueva </h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
               <div class="modal-body">
                 <form>
-                  <div class="form-group addCompanyInfo">
-                    <label for="addCompanyName" class="label-name">Nombre<span>*</span></label>
-                    <input type="text" class="form-control input-name" id="addCompanyName" required>
-                    <label for="addCompanyAddress" class="label-address">Direccíon<span>*</span></label>
-                    <input type="text" class="form-control input-address" id="addCompanyAddress" required>
-                    <label for="addCompanyMail" class="label-email">Email<span>*</span></label>
-                    <input type="email" class="form-control input-email" id="addCompanyMail" required>
-                    <label for="addCompanyPhoneNumber" class="label-phoneNumber">Teléfono<span>*</span></label>
-                    <input type="number" class="form-control input-phoneNumber" id="addCompanyPhoneNumber" required>
-                    <label for="addCompanyIdCity" class="label-city">Ciudad<span>*</span></label>
-                    <select name="addCompanyIdCity" id="addCompanyIdCity" class=" form-control input-city" required>
-                      <option value="" disabled selected>Seleccionar ciudad</option>
-                      <option value="Cartagena">Cartagena</option>
-                      <option value="Medellin">Medellín</option>
-                    </select>
+                  <div class="form-group">
+                    <label for="addCompanyName" class="">Nombre<span>*</span></label>
+                    <input type="text" class="form-control" id="addCompanyName" required>
                   </div>
                 </form>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-light btn-cancel-modal" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-secondary" disabled>Guardar compañia</button><!--successfully or error adding a contact-->
+                <button type="button" class="btn btn-secondary" disabled>Guardar</button><!--successfully or error adding a contact-->
               </div>
             </div>
           </div>
@@ -195,5 +187,15 @@
     <!--bootstrap js-->
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+  <script>
+    $('#addRegion').on('show.bs.modal', function (event) {
+    var button = $(event.relatedTarget) // Button that triggered the modal
+    var recipient = button.data('whatever') // Extract info from data-* attributes
+    // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+    // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+    var modal = $(this)
+    modal.find('.modal-title').text('New message to ' + recipient)
+  });
+  </script>
 </body>
 </html>

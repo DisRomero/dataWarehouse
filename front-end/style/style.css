@@ -393,13 +393,13 @@
 
 .label-lastName {
   -ms-grid-row: 1;
-  -ms-grid-column: 3;
+  -ms-grid-column: 2;
   grid-area: label-lastName;
 }
 
 .input-lastName {
   -ms-grid-row: 2;
-  -ms-grid-column: 3;
+  -ms-grid-column: 2;
   grid-area: input-lastName;
 }
 
@@ -686,6 +686,130 @@
   -ms-grid-row: 2;
   -ms-grid-column: 5;
   grid-area: input-city;
+}
+
+.modal-dialog .modal-company {
+  height: auto;
+}
+
+.addUserInfo {
+  padding-top: 23.5px;
+  padding-left: 23.5px;
+  padding-bottom: 23.5px;
+  padding-right: 15.5px;
+  border: 3px solid #0683f9;
+  border-radius: 6.5px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr 1.4fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1.4fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  gap: 0px 4%;
+      grid-template-areas: "label-userName label-lastName label-UserEmail label-userType label-pass" "input-userName input-lastName input-UserEmail input-userType input-pass";
+}
+
+.addUserInfo span {
+  color: #de0028;
+}
+
+.addUserInfo label {
+  margin-top: 11px;
+}
+
+.addUserInfo input,
+.addUserInfo select {
+  width: 190px;
+  height: 35.5px;
+}
+
+.label-userName {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: label-userName;
+}
+
+.input-userName {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: input-userName;
+}
+
+.label-lastName {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: label-lastName;
+}
+
+.input-lastName {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: input-lastName;
+}
+
+.label-UserEmail {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: label-UserEmail;
+}
+
+.input-UserEmail {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: input-UserEmail;
+}
+
+.label-userType {
+  -ms-grid-row: 1;
+  -ms-grid-column: 4;
+  grid-area: label-userType;
+}
+
+.input-userType {
+  -ms-grid-row: 2;
+  -ms-grid-column: 4;
+  grid-area: input-userType;
+}
+
+.label-pass {
+  -ms-grid-row: 1;
+  -ms-grid-column: 5;
+  grid-area: label-pass;
+}
+
+.input-pass {
+  -ms-grid-row: 2;
+  -ms-grid-column: 5;
+  grid-area: input-pass;
+}
+
+#addRegion .modal-dialog {
+  max-width: 350px;
+}
+
+#addRegion .modal-dialog .modal-region {
+  height: auto;
+}
+
+#addRegion .modal-dialog .modal-content .modal-body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: auto;
+  margin-right: 21.5px;
+  border: 3px solid #0683f9;
+  border-radius: 6.5px;
+  margin-top: -10%;
+}
+
+#addRegion .modal-dialog .modal-content .modal-body input {
+  width: 190px;
 }
 
 footer {

@@ -38,43 +38,43 @@
     </header>
 
     <section class="title title-company">
-      <h3>Compañias</h3>
+      <h3>Usuarios</h3>
       <!-- Button add contact modal -->
-      <button type="button" id="btn" class="btn btn-primary btn-company" data-toggle="modal" data-target="#addCompany">Agregar compañia</button>
+      <button type="button" id="btn" class="btn btn-primary btn-company" data-toggle="modal" data-target="#addUser">Agregar usuario</button>
 
         <!-- add contact Modal -->
-        <div class="modal fade" id="addCompany" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="addContactLabel" aria-hidden="true">
+        <div class="modal fade" id="addUser" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="addContactLabel" aria-hidden="true">
           <div class="modal-dialog">
             <div class="modal-content modal-company">
               <div class="modal-header">
-                <h5 class="modal-title" id="staticBackdropLabel">Nueva compañia</h5>
+                <h5 class="modal-title" id="staticBackdropLabel">Nuevo usuario</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
               <div class="modal-body">
                 <form>
-                  <div class="form-group addCompanyInfo">
-                    <label for="addCompanyName" class="label-name">Nombre<span>*</span></label>
-                    <input type="text" class="form-control input-name" id="addCompanyName" required>
-                    <label for="addCompanyAddress" class="label-address">Direccíon<span>*</span></label>
-                    <input type="text" class="form-control input-address" id="addCompanyAddress" required>
-                    <label for="addCompanyMail" class="label-email">Email<span>*</span></label>
-                    <input type="email" class="form-control input-email" id="addCompanyMail" required>
-                    <label for="addCompanyPhoneNumber" class="label-phoneNumber">Teléfono<span>*</span></label>
-                    <input type="number" class="form-control input-phoneNumber" id="addCompanyPhoneNumber" required>
-                    <label for="addCompanyIdCity" class="label-city">Ciudad<span>*</span></label>
-                    <select name="addCompanyIdCity" id="addCompanyIdCity" class=" form-control input-city" required>
-                      <option value="" disabled selected>Seleccionar ciudad</option>
-                      <option value="Cartagena">Cartagena</option>
-                      <option value="Medellin">Medellín</option>
+                  <div class="form-group addUserInfo">
+                    <label for="addUserName" class="label-userName">Nombre<span>*</span></label>
+                    <input type="text" class="form-control input-userName" id="addUserName" required>
+                    <label for="addUserLastName" class="label-lastName">Apellido<span>*</span></label>
+                    <input type="text" class="form-control input-lastName" id="addUserLastName" required>
+                    <label for="addUserMail" class="label-UserEmail">Email<span>*</span></label>
+                    <input type="email" class="form-control input-UserEmail" id="addUserMail" required>
+                    <label for="addUserType" class="label-userType">Perfil<span>*</span></label>
+                    <select name="addUserType" id="addUserType" class=" form-control input-userType" required>
+                      <option value="" disabled selected>Seleccionar tipo de usuario</option>
+                      <option value="1">Admin </option>
+                      <option value="2">Básico </option>
                     </select>
+                    <label for="addPass" class="label-pass">Contraseña<span>*</span></label>
+                    <input type="text" class="form-control input-pass" id="addPass" required>
                   </div>
                 </form>
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-light btn-cancel-modal" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-secondary" disabled>Guardar compañia</button><!--successfully or error adding a contact-->
+                <button type="button" class="btn btn-secondary" disabled>Guardar usuario</button><!--successfully or error adding a contact-->
               </div>
             </div>
           </div>
@@ -89,10 +89,9 @@
               <input class="form-check-input" type="checkbox" value="">
             </th>
             <th scope="col">Nombre <i class="bi bi-arrow-down-up"></i></th>
-            <th scope="col">Teléfono <i class="bi bi-arrow-down-up"></i></th>
+            <th scope="col">Apellido <i class="bi bi-arrow-down-up"></i></th>
             <th scope="col">Email <i class="bi bi-arrow-down-up"></i></th>
-            <th scope="col">Ciudad <i class="bi bi-arrow-down-up"></i></th>
-            <th scope="col">Dirección <i class="bi bi-arrow-down-up"></i></th>
+            <th scope="col">Perfil <i class="bi bi-arrow-down-up"></i></th>
             <th scope="col" class="acction">Acciones</th>
           </tr>
         </thead>
@@ -103,22 +102,42 @@
             </th>
             <td class="td-flex">
               <div>
-                <p>Ecom</p>
+                <p>Usuario 1</p>
               </div>
             </td>
             <td>
               <div>
-                <p>3123456789</p>
+                <p>Apellido</p>
               </div>
             </td>
             <td>
-              <p>Ecom@ecom.com</p> 
+              <p>usuario@test.com</p> 
             </td>
             <td>
-              <p>Medellin</p>
+              <p>Admin</p>
+            </td>
+
+            <td class="acction"><i class="bi bi-three-dots"></i></td>
+          </tr>
+          <tr>
+            <th scope="row" class="th-checkbox" >
+              <input class="form-check-input" type="checkbox" value="">
+            </th>
+            <td class="td-flex">
+              <div>
+                <p>Usuario 2</p>
+              </div>
             </td>
             <td>
-              <p>Cl 1 # 2-34</p>
+              <div>
+                <p>Apellido</p>
+              </div>
+            </td>
+            <td>
+              <p>usuario@test.com</p> 
+            </td>
+            <td>
+              <p>Admin</p>
             </td>
             <td class="acction"><i class="bi bi-three-dots"></i></td>
           </tr>
@@ -128,47 +147,19 @@
             </th>
             <td class="td-flex">
               <div>
-                <p>Ecom</p>
+                <p>Usuario 3</p>
               </div>
             </td>
             <td>
               <div>
-                <p>3123456789</p>
+                <p>Apellido</p>
               </div>
             </td>
             <td>
-              <p>Ecom@ecom.com</p> 
+              <p>usuario@test.com</p> 
             </td>
             <td>
-              <p>Medellin</p>
-            </td>
-            <td>
-              <p>Cl 1 # 2-34</p>
-            </td>
-            <td class="acction"><i class="bi bi-three-dots"></i></td>
-          </tr>
-          <tr>
-            <th scope="row" class="th-checkbox" >
-              <input class="form-check-input" type="checkbox" value="">
-            </th>
-            <td class="td-flex">
-              <div>
-                <p>Ecom</p>
-              </div>
-            </td>
-            <td>
-              <div>
-                <p>3123456789</p>
-              </div>
-            </td>
-            <td>
-              <p>Ecom@ecom.com</p> 
-            </td>
-            <td>
-              <p>Medellin</p>
-            </td>
-            <td>
-              <p>Cl 1 # 2-34</p>
+              <p>Admin</p>
             </td>
             <td class="acction"><i class="bi bi-three-dots"></i></td>
           </tr>
